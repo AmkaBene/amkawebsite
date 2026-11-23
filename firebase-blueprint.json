@@ -1,0 +1,46 @@
+{
+  "entities": {
+    "VisitorNote": {
+      "title": "VisitorNote",
+      "description": "A public guestbook note left by a visitor on Amka's personal website.",
+      "type": "object",
+      "properties": {
+        "authorName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "description": "Display name or nickname chosen by the visitor."
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 280,
+          "description": "Short message left on the silver guestbook wall."
+        },
+        "sticker": {
+          "type": "string",
+          "enum": ["star", "bubble", "disc", "fish", "heart", "spark"],
+          "description": "Y2K Aero icon sticker attached to the note."
+        },
+        "isPublic": {
+          "type": "boolean",
+          "description": "Explicit marker indicating public guestbook visibility."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp recorded at note creation."
+        }
+      },
+      "required": ["authorName", "message", "sticker", "isPublic", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/visitor_notes/{noteId}": {
+      "schema": {
+        "$ref": "#/entities/VisitorNote"
+      },
+      "description": "Public visitor guestbook notes displayed on the arcade & hangout wall."
+    }
+  }
+}

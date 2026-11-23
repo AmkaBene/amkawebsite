@@ -1,0 +1,6 @@
+{
+  "name": "Amka — Studio & Code",
+  "description": "Personal website of Amka (AmkaBene), a 19-year-old Mongolian Computer Science student at Sungkyunkwan University, artist, and developer. Crafted in Frutiger Aero and Y2K Silver.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
